@@ -1,0 +1,14 @@
+{
+  "name": "dockerApp",
+  "version": "0.1.1",
+  "private": true,
+  "scripts": {
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": "^4.6.1"
+  },
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}

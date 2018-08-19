@@ -1,0 +1,26 @@
+Vagrant.configure("2") do |config|
+
+  #config.vm.box = "Ubuntu/trusty32"
+
+
+  config.vm.define "dev-webserver" do | dev |
+    # configure dev-webserver VM
+    dev.vm.box = "Ubuntu/trusty32"
+    dev.vm.hostname = "dev-webserver"
+    dev.vm.network "private_network", ip:  "192.168.56.6"
+    dev.vm.synced_folder "apps/","/home/vagrant"
+  end
+
+  config.vm.define "qa-webserver" do | qa |
+    # configure qa-webserver VM
+    qa.vm.box = "Ubuntu/trusty32"
+    qa.vm.hostname = "qa-webserver"
+    qa.vm.network "private_network", ip: "192.168.99.121"
+  end
+
+  # script to install software
+    config.vm.provision "shell", inline: <<-SHELL
+      sudo apt-get install -y nodejs
+    SHELL
+
+end
