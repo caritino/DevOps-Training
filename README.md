@@ -1,2 +1,2 @@
 # DevOps-Training
-Freddiemac DevOps training
+DevOps training
